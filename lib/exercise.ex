@@ -49,7 +49,6 @@ defmodule Exercise do
     |> Flow.partition()
     |> Flow.map(&(munge_string(&1)))
     |> Enum.sort()
-    |> Enum.to_list()
     |> Stream.map(&(String.slice(&1, 9..-1)))
     |> Stream.into( File.stream!(file_path))
     |> Stream.run()
